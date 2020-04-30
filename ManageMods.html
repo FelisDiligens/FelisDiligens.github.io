@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>README - Manage mods</title>
+    <link rel="stylesheet" href="assets/style.css"/>
+</head>
+<body>
+    <div id="header">
+        README: Manage mods
+    </div>
+    <div id="navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Changelog.html">Changelog</a></li>
+            <li class="current"><a href="#">Manage mods</a></li>
+            <li><a href="https://www.nexusmods.com/fallout76/mods/546">NexusMods</a></li>
+        </ul>
+    </div>
+    <div id="article">
+        <p>
+            Table of contents:
+            <ul>
+                <li><a href="#archive2">About Archive2</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#issues">Known issues</a></li>
+            </ul>
+        </p>
+        <br>
+
+        <h2 id="archive2">ABOUT ARCHIVE2</h2>
+        <p>
+            In order to use the mod manager, you need to install Archive2.<br>
+            Archive2 is the official tool to pack/extract *.ba2 archives.<br>
+            It is shipped with Fallout 4's Creation Kit.<br>
+            Note that Skyrim's Creation Kit won't cut it, you need Fallout 4.<br>
+            <br>
+            I'm not going to distribute Archive2 with my tool because I don't want any legal issues.
+            If you choose to pirate it, that's your pigeon. Also, I think most people who play and mod Fallout 76 already own Fallout 4 and have the Bethesda.net Launcher installed.<br>
+            <br>
+            <b>How to install Archive2:</b>
+            <ol>
+                <li>Install Fallout 4.</li>
+                <li><a href="https://bethesda.net/en/game/bethesda-launcher">Get the Bethesda.net Launcher</a>, create a account if needed.</li>
+                <li>Install "Creation Kit: Fallout 4" <i>(see Figure 1)</i></li>
+                <li>
+                    Open the "Manage mods" window and set the path to "Archive2.exe". <i>(see Figure 2)</i><br>
+                    You can find Archive2.exe in <code>&lt;your steam folder&gt;\steamapps\common\Fallout 4\Tools\Archive2\Archive2.exe</code>.
+                </li>
+            </ol>
+            <figure>
+                <img src="assets/creationkit.png">
+                <figcaption>Figure 1: "Creation Kit: Fallout 4"</figcaption>
+            </figure>
+            <figure>
+                <img src="assets/archive2.png">
+                <figcaption>Figure 2: Pick Archive2.exe</figcaption>
+            </figure>
+        </p>
+        <br><hr>
+
+        <h2 id="faq">FAQ</h2>
+        <p>
+            <b>How to add mods?</b><br>
+            Click on File > Add mod > From archive.<br>
+            You can also drag and drop them into the mod order.
+            <br>
+            <br>
+            <b>How to completely disable mods?</b><br>
+            Check "Nuclear Winter Mode" and click on "Deploy". It disables mods entirely.<br>
+            The <code>sResourceIndexFileList</code> will temporarly be saved in QuickConfiguration.ini instead of the Fallout76Custom.ini, so you don't lose your manually installed mods.
+            <br>
+            <br>
+            <b>What happens to mods I've installed manually?</b><br>
+            The tool won't touch these mods. If you want to manage them, you can import them: File > Import installed mods
+            <br>
+            <br>
+            <b>Can I get banned for using mods?</b><br>
+            Yes, of course. In fact, you can get permanently banned. <br>
+            Also, refer to Bethesda's support page: <a href="https://help.bethesda.net/app/answers/detail/a_id/44429/kw/mod">https://help.bethesda.net/app/answers/detail/a_id/44429/kw/mod</a>
+            <br>
+            <br>
+            <b>Why don't you distribute Archive2 with your tool?</b><br>
+            Because Bethesda owns the Archive2 tool and if I did so, I'd basically pirate it.<br>
+            Other mod authors might do this, but I don't want any legal issues.
+        </p>
+        <br><hr>
+
+        <h2 id="issues">Known issues</h2>
+        <p>
+            <b>Reskins aren't working, textures get reset, TZMap gets reset after fast travel</b><br>
+            Please make sure to select<br>
+            <code>&#128280; Bundled *.ba2 archive (Textures, *.dds files)</code> or<br>
+            <code>&#128280; Use DDS format (for textures)</code>, <br>
+            before reporting an issue.
+        </p>
+    </article>
+</body>
+</html>
