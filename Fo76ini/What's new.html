@@ -1,363 +1,147 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
 <head>
-<title>What's new.md</title>
-<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>What&#39;s new</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style type="text/css"> html {line-height: 1.5;font-family: Calibri, sans-serif;font-size: 12pt;color: #1a1a1a;background-color: #fdfdfd;}body {margin: 0;max-width: 36em;padding-left: 20px;padding-right: 20px;padding-top: 5px;padding-bottom: 20px;hyphens: auto;overflow-wrap: break-word;text-rendering: optimizeLegibility;font-kerning: normal;}details {color: #333;}summary {color: #0000CC;}summary:hover {cursor: pointer;color: #5555FF;}p {margin: 1em 0;}a {color: #1a1a1a;}a:visited {color: #1a1a1a;}img {max-width: 100%;}h1, h2, h3, h4, h5, h6 {margin-top: 1.4em;}h5, h6 {font-size: 1em;font-style: italic;}h6 {font-weight: normal;}ol, ul {padding-left: 1.7em;margin-top: 1em;}li > ol, li > ul {margin-top: 0;}blockquote {margin: 1em 0 1em 1.7em;padding-left: 1em;border-left: 2px solid #e6e6e6;color: #606060;}code {font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;font-size: 85%;margin: 0;}pre {margin: 1em 0;overflow: auto;}pre code {padding: 0;overflow: visible;overflow-wrap: normal;}.sourceCode {background-color: transparent;overflow: visible;}hr {background-color: #999;border: none;height: 1px;margin: 1em 0;}table {margin: 1em 0;border-collapse: collapse;width: 100%;overflow-x: auto;display: block;font-variant-numeric: lining-nums tabular-nums;}table caption {margin-bottom: 0.75em;}tbody {margin-top: 0.5em;border-top: 1px solid #1a1a1a;border-bottom: 1px solid #1a1a1a;}th {border-top: 1px solid #1a1a1a;padding: 0.25em 0.5em 0.25em 0.5em;}td {padding: 0.125em 0.5em 0.25em 0.5em;}header {margin-bottom: 4em;text-align: center;}#TOC li {list-style: none;}#TOC ul {padding-left: 1.3em;}#TOC > ul {padding-left: 0;}#TOC a:not(:hover) {text-decoration: none;}</style>
+  <!-- Do not use IE7 compatibility mode: -->
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 
-<style>
-/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
-
-body {
-	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
-	font-size: var(--vscode-markdown-font-size, 14px);
-	padding: 0 26px;
-	line-height: var(--vscode-markdown-line-height, 22px);
-	word-wrap: break-word;
-}
-
-#code-csp-warning {
-	position: fixed;
-	top: 0;
-	right: 0;
-	color: white;
-	margin: 16px;
-	text-align: center;
-	font-size: 12px;
-	font-family: sans-serif;
-	background-color:#444444;
-	cursor: pointer;
-	padding: 6px;
-	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
-}
-
-#code-csp-warning:hover {
-	text-decoration: none;
-	background-color:#007acc;
-	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
-}
-
-body.scrollBeyondLastLine {
-	margin-bottom: calc(100vh - 22px);
-}
-
-body.showEditorSelection .code-line {
-	position: relative;
-}
-
-body.showEditorSelection .code-active-line:before,
-body.showEditorSelection .code-line:hover:before {
-	content: "";
-	display: block;
-	position: absolute;
-	top: 0;
-	left: -12px;
-	height: 100%;
-}
-
-body.showEditorSelection li.code-active-line:before,
-body.showEditorSelection li.code-line:hover:before {
-	left: -30px;
-}
-
-.vscode-light.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(0, 0, 0, 0.15);
-}
-
-.vscode-light.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(0, 0, 0, 0.40);
-}
-
-.vscode-light.showEditorSelection .code-line .code-line:hover:before {
-	border-left: none;
-}
-
-.vscode-dark.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(255, 255, 255, 0.4);
-}
-
-.vscode-dark.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(255, 255, 255, 0.60);
-}
-
-.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
-	border-left: none;
-}
-
-.vscode-high-contrast.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(255, 160, 0, 0.7);
-}
-
-.vscode-high-contrast.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(255, 160, 0, 1);
-}
-
-.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
-	border-left: none;
-}
-
-img {
-	max-width: 100%;
-	max-height: 100%;
-}
-
-a {
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: underline;
-}
-
-a:focus,
-input:focus,
-select:focus,
-textarea:focus {
-	outline: 1px solid -webkit-focus-ring-color;
-	outline-offset: -1px;
-}
-
-hr {
-	border: 0;
-	height: 2px;
-	border-bottom: 2px solid;
-}
-
-h1 {
-	padding-bottom: 0.3em;
-	line-height: 1.2;
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
-}
-
-h1, h2, h3 {
-	font-weight: normal;
-}
-
-table {
-	border-collapse: collapse;
-}
-
-table > thead > tr > th {
-	text-align: left;
-	border-bottom: 1px solid;
-}
-
-table > thead > tr > th,
-table > thead > tr > td,
-table > tbody > tr > th,
-table > tbody > tr > td {
-	padding: 5px 10px;
-}
-
-table > tbody > tr + tr > td {
-	border-top: 1px solid;
-}
-
-blockquote {
-	margin: 0 7px 0 5px;
-	padding: 0 16px 0 10px;
-	border-left-width: 5px;
-	border-left-style: solid;
-}
-
-code {
-	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
-	font-size: 1em;
-	line-height: 1.357em;
-}
-
-body.wordWrap pre {
-	white-space: pre-wrap;
-}
-
-pre:not(.hljs),
-pre.hljs code > div {
-	padding: 16px;
-	border-radius: 3px;
-	overflow: auto;
-}
-
-pre code {
-	color: var(--vscode-editor-foreground);
-	tab-size: 4;
-}
-
-/** Theming */
-
-.vscode-light pre {
-	background-color: rgba(220, 220, 220, 0.4);
-}
-
-.vscode-dark pre {
-	background-color: rgba(10, 10, 10, 0.4);
-}
-
-.vscode-high-contrast pre {
-	background-color: rgb(0, 0, 0);
-}
-
-.vscode-high-contrast h1 {
-	border-color: rgb(0, 0, 0);
-}
-
-.vscode-light table > thead > tr > th {
-	border-color: rgba(0, 0, 0, 0.69);
-}
-
-.vscode-dark table > thead > tr > th {
-	border-color: rgba(255, 255, 255, 0.69);
-}
-
-.vscode-light h1,
-.vscode-light hr,
-.vscode-light table > tbody > tr + tr > td {
-	border-color: rgba(0, 0, 0, 0.18);
-}
-
-.vscode-dark h1,
-.vscode-dark hr,
-.vscode-dark table > tbody > tr + tr > td {
-	border-color: rgba(255, 255, 255, 0.18);
-}
-
-</style>
-
-<style>
-/* Tomorrow Theme */
-/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
-/* Original theme - https://github.com/chriskempson/tomorrow-theme */
-
-/* Tomorrow Comment */
-.hljs-comment,
-.hljs-quote {
-	color: #8e908c;
-}
-
-/* Tomorrow Red */
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag,
-.hljs-name,
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-regexp,
-.hljs-deletion {
-	color: #c82829;
-}
-
-/* Tomorrow Orange */
-.hljs-number,
-.hljs-built_in,
-.hljs-builtin-name,
-.hljs-literal,
-.hljs-type,
-.hljs-params,
-.hljs-meta,
-.hljs-link {
-	color: #f5871f;
-}
-
-/* Tomorrow Yellow */
-.hljs-attribute {
-	color: #eab700;
-}
-
-/* Tomorrow Green */
-.hljs-string,
-.hljs-symbol,
-.hljs-bullet,
-.hljs-addition {
-	color: #718c00;
-}
-
-/* Tomorrow Blue */
-.hljs-title,
-.hljs-section {
-	color: #4271ae;
-}
-
-/* Tomorrow Purple */
-.hljs-keyword,
-.hljs-selector-tag {
-	color: #8959a8;
-}
-
-.hljs {
-	display: block;
-	overflow-x: auto;
-	color: #4d4d4c;
-	padding: 0.5em;
-}
-
-.hljs-emphasis {
-	font-style: italic;
-}
-
-.hljs-strong {
-	font-weight: bold;
-}
-</style>
-
-<style>
-/*
- * Markdown PDF CSS
+  <!-- Make <details> and <summary> tags work in IE: -->
+  <script>/**
+ * Minified by jsDelivr using Terser v5.3.5.
+ * Original file: /npm/details-polyfill@1.2.0/index.js
+ *
+ * Do NOT use SRI with dynamically generated files! More information: https://www.jsdelivr.com/using-sri-with-dynamic-files
  */
-
- body {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
-	padding: 0 12px;
-}
-
-pre {
-	background-color: #f8f8f8;
-	border: 1px solid #cccccc;
-	border-radius: 3px;
-	overflow-x: auto;
-	white-space: pre-wrap;
-	overflow-wrap: break-word;
-}
-
-pre:not(.hljs) {
-	padding: 23px;
-	line-height: 19px;
-}
-
-blockquote {
-	background: rgba(127, 127, 127, 0.1);
-	border-color: rgba(0, 122, 204, 0.5);
-}
-
-.emoji {
-	height: 1.4em;
-}
-
-code {
-	font-size: 14px;
-	line-height: 19px;
-}
-
-/* for inline code */
-:not(pre):not(.hljs) > code {
-	color: #C9AE75; /* Change the old color so it seems less like an error */
-	font-size: inherit;
-}
-
-/* Page Break : use <div class="page"/> to insert page break
--------------------------------------------------------- */
-.page {
-	page-break-after: always;
-}
-
-</style>
-
+!function(e,t){"function"==typeof define&&define.amd?define(t):"object"==typeof exports?module.exports=t():t()}(0,(function(){var e="details";(function(){var t=document.createElement(e);if(!("open"in t))return!1;t.innerHTML="<summary>a</summary>b",document.body.appendChild(t);var n=t.offsetHeight;t.open=!0;var o=n!=t.offsetHeight;return document.body.removeChild(t),o})()||(document.documentElement.className+=" no-details",window.addEventListener("click",(function(e){if("summary"===e.target.nodeName.toLowerCase()){var t=e.target.parentNode;if(!t)return;t.getAttribute("open")?(t.open=!1,t.removeAttribute("open")):(t.open=!0,t.setAttribute("open","open"))}})),function(e,t){if(document.getElementById(e))return;var n=document.createElement("style");n.id=e,n.innerHTML=t,document.getElementsByTagName("head")[0].appendChild(n)}("details-polyfill-style",'html.no-details details { display: block; }\nhtml.no-details details:not([open]) > :not(summary) { display: none; }\nhtml.no-details details > summary:before { content: "▶"; display: inline-block; font-size: .8em; width: 1.5em; }\nhtml.no-details details[open] > summary:before { content: "▼"; }'))}));
+//# sourceMappingURL=/sm/5ae9c415198ea3eebf607bd13382342b8974507a49fc8dd827ca82f4b7318bec.map</script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
 <body>
-<p><strong>What's new in vX.XX.X?</strong><br>
-Placeholder...</p>
+<h3 id="whats-new-in-v1110---the-fresh-coat-of-paint-update">What’s new
+in v1.11.0? - The &quot;fresh coat of paint&quot; update</h3>
+<blockquote>
+<p><strong>If you do not like the changes, you can download v1.10 from
+NexusMods or GitHub.</strong></p>
+</blockquote>
+<p>Hello everyone,</p>
+<p>this update is a rather large one - at least in terms of UI
+changes.<br />
+I decided to rearrange everything and add a sidebar for navigation.</p>
+<p>I tested almost every tweak and changed/removed old tweaks as well as
+adding a few new ones.<br />
+The mod manager has two new options. Also, I fixed some smaller bugs.
+Just explore a little, if you like to.</p>
+<p>As always, you can read the changelog below.</p>
+<p>Happy hunting,</p>
+<p>~ datasnake</p>
+<hr />
+<p><strong>Changelog:</strong></p>
+<details>
+<summary>Click to expand</summary>
 
+<ul>
+<li>General:
+<ul>
+<li>Most notable change: Added a side navigation that replaces the top
+panel, the bottom status panel, and the tabs.</li>
+<li>Added a &quot;Hero&quot; banner to the &quot;Home&quot; page</li>
+<li>Moved &quot;Tweaks&quot; into their own page</li>
+<li>Removed &quot;Settings&quot; window; moved &quot;Settings&quot;, &quot;Profiles&quot;, and
+&quot;NexusMods&quot; into their own page</li>
+<li>Reworked the profile manager</li>
+<li>Added line numbers, syntax highlighting, autocompletion and hotkeys
+to the &quot;Custom&quot; page&#39;s textbox</li>
+<li>Replaced the awful <code>FolderBrowserDialog</code> with a proper
+dialog that let&#39;s you choose a folder more comfortably.</li>
+</ul></li>
+<li>Tweaks:
+<ul>
+<li>Tweaks are now color-coded
+<ul>
+<li>Added Info about color-codes and tool tips</li>
+</ul></li>
+<li>Reworked tweaks:
+<ul>
+<li>Added some missing tweaks from the ingame settings</li>
+<li>Added Screen Space Reflections and Blood Splatter to Graphics tweaks
+<ul>
+<li>Added fix for black/invisible water</li>
+</ul></li>
+<li>Removed some tweaks that didn&#39;t do anything</li>
+<li>Changed some tweaks</li>
+</ul></li>
+<li>Added FOV preview</li>
+<li>Removed the &quot;Danger Zone&quot;</li>
+<li>*.ini files are parsed differently now:
+<ul>
+<li>Comments can now be in-line and begin with <code>&quot;;&quot;</code>
+(semicolon) or <code>&quot;#&quot;</code> (hash)
+<ul>
+<li>This might break the s76UserName and s76Password text fields.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Pip-Boy:
+<ul>
+<li>Added a few more Pip-Boy color presets</li>
+<li>Added HEX codes to Pip-Boy tab</li>
+<li>Fixed Quick-Boy color not applying ingame</li>
+</ul></li>
+<li>Profiles:
+<ul>
+<li>You can now change the path where the *.ini files are stored.</li>
+</ul></li>
+<li>Mod manager:
+<ul>
+<li>Fixed: &quot;Import installed mods&quot; importing already managed mods.</li>
+<li>Added an option to create symlinks when deploying. (Experimental
+feature)</li>
+<li>Added an option to put bundled archives last in the load order.</li>
+<li>Placed &quot;Notes&quot; under &quot;Installation options&quot; in mod manager&#39;s side
+panel</li>
+<li>Added a button to open the folder of a mod in mod manager&#39;s side
+panel</li>
+</ul></li>
+<li>Minor changes / fixes
+<ul>
+<li>Added missing messagebox strings when you picked the wrong game
+path.</li>
+<li>Added missing messagebox strings when you delete photos in the
+gallery.</li>
+<li>Made some UI elements that were previously untranslatable,
+translatable.</li>
+<li>When picking the game path, you now browse for the folder instead of
+the *.exe file.</li>
+<li>and a few more.</li>
+</ul></li>
+<li>Removed backwards-compatibility...
+<ul>
+<li>... to v1.8&#39;s Mod Manager</li>
+<li>... to v1.8&#39;s Profiles</li>
+</ul></li>
+<li>Known issues:
+<ul>
+<li>The scroll whell on Windows 7 doesn&#39;t always work properly due to
+how focus works in older Windows versions.</li>
+<li>If a password written into [Login]s76Password contains
+<code>&quot;;&quot;</code> or <code>&quot;#&quot;</code>, it will be truncated.</li>
+</ul></li>
+</ul>
+</details>
 </body>
 </html>
