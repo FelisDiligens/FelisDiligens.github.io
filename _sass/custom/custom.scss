@@ -1,0 +1,15 @@
+@media (min-width: 31.25rem) {
+    .site-title {
+        font-size: 18px !important;
+    }
+}
+
+a.skip-to-main {
+    display: none;
+}
+
+.external > svg {
+    width: 16px;
+    height: 16px;
+    vertical-align: text-bottom;
+}
