@@ -33,6 +33,7 @@ remote_theme: just-the-docs/just-the-docs
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-redirect-from
 #color_scheme: dark
 
 # Enable or disable heading anchors

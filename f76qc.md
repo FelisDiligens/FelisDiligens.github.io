@@ -2,6 +2,8 @@
 layout: page
 title: Fallout 76 Quick Configuration
 permalink: /f76qc/
+has_children: true
+nav_order: 2
 ---
 
 ![Banner](/assets/img/banner_github.png)  
@@ -22,6 +24,8 @@ This tool allows you to change various game settings and install mods.
 [![](/assets/img/getitfromnexusmods_button.png)](https://www.nexusmods.com/fallout76/mods/546?tab=files#mod-page-tab-files)
 [![](/assets/img/getitfromgithub_button.png)](https://github.com/FelisDiligens/Fallout76-QuickConfiguration/releases/latest)
 
+[Find all releases on GitHub](https://github.com/FelisDiligens/Fallout76-QuickConfiguration/releases)
+
 ## 📚 Wiki and other project pages
 
 - [NexusMods page](https://www.nexusmods.com/fallout76/mods/546)
@@ -29,7 +33,6 @@ This tool allows you to change various game settings and install mods.
   - [Bug reports](https://www.nexusmods.com/fallout76/mods/546?tab=bugs#tab-modbugs)
   - [Screenshots](https://www.nexusmods.com/fallout76/mods/546?tab=images#list-modimages-1)
 - [GitHub page](https://github.com/FelisDiligens/Fallout76-QuickConfiguration#readme)
-  - [Releases](https://github.com/FelisDiligens/Fallout76-QuickConfiguration/releases)
 - [Wiki & Guides](https://github.com/FelisDiligens/Fallout76-QuickConfiguration/wiki)
   - [Frequently Asked Questions](https://github.com/FelisDiligens/Fallout76-QuickConfiguration/wiki/Frequently-Asked-Questions-(FAQ))
   - [Troubleshooting](https://github.com/FelisDiligens/Fallout76-QuickConfiguration/wiki/Troubleshooting)
