@@ -16,11 +16,16 @@ You can find my projects here:
 - [Fallout 76 Quick Configuration](/f76qc) - A tool that allows you to tweak *.ini settings and install mods. 
 - [The Elder Scrolls Name Generator](/tes-name-generator) - Ever wondered what to call your next Skyrim character?
 
+### Forks
+
+- [Stacky](https://github.com/FelisDiligens/stacky) - Simple icon stacks solution for Windows. Updated and built for Windows 10 and 11.
+
 ### Joplin Plugins
 
 [Joplin](https://joplinapp.org/) is an open source note-taking app that can be extended by plugins such as this:
 
 - [CodeMirror options](https://github.com/FelisDiligens/joplin-plugin-cmoptions#readme) - Adds some CodeMirror options to Joplin's settings, such as line numbers and line wrapping. 
+- [MultiMarkdown Table Tools](https://github.com/FelisDiligens/joplin-plugin-multimd-table-tools#readme) - A collection of tools to make editing tables easier.
 
 ## Find me on...
 [![](https://img.shields.io/badge/-GitHub-222222?style=for-the-badge&logo=GitHub)](https://github.com/FelisDiligens)
