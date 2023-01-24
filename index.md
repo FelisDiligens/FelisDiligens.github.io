@@ -24,8 +24,9 @@ You can find my projects here:
 
 [Joplin](https://joplinapp.org/) is an open source note-taking app that can be extended by plugins such as this:
 
-- [CodeMirror options](https://github.com/FelisDiligens/joplin-plugin-cmoptions#readme) - Adds some CodeMirror options to Joplin's settings, such as line numbers and line wrapping. 
+- [Search & Replace](https://github.com/FelisDiligens/joplin-plugin-search-and-replace) - Adds a simple search and replace dialog.
 - [MultiMarkdown Table Tools](https://github.com/FelisDiligens/joplin-plugin-multimd-table-tools#readme) - A collection of tools to make editing tables easier.
+- [CodeMirror options](https://github.com/FelisDiligens/joplin-plugin-cmoptions#readme) - Adds some CodeMirror options to Joplin's settings, such as line numbers and line wrapping. 
 
 ## Find me on...
 [![](https://img.shields.io/badge/-GitHub-222222?style=for-the-badge&logo=GitHub)](https://github.com/FelisDiligens)
