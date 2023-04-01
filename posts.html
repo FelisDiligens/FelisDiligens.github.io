@@ -1,0 +1,50 @@
+---
+layout: page
+title: Posts
+permalink: /posts/
+---
+
+<style>
+    .post-list {
+        background-color: #252525;
+        border-radius: 4px;
+        box-shadow: #151515 2px 2px 2px 2px;
+        padding: 8px 20px;
+    }
+
+    .post-title {
+        margin-top: 0 !important;
+    }
+
+    .post-meta {
+        color: gray;
+        font-size: 10pt;
+    }
+
+    .post-excerpt {
+        color: lightgray;
+        font-size: 11pt;
+        font-style: italic;
+    }
+</style>
+
+{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+{% if site.posts.size > 0 %}
+    {% for post in site.posts %}
+        <div class="post-list">
+            <span class="post-meta">
+                <time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: date_format }}</time>
+            </span>
+            <h3 class="post-title">
+                <a href="{{ post.url | relative_url }}">
+                    {{ post.title | escape }}
+                </a>
+            </h3>
+            <div class="post-excerpt">
+                {{ post.excerpt }}
+            </div>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No posts found.</p>
+{% endif %}
