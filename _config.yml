@@ -27,8 +27,10 @@ url: "https://felisdiligens.github.io" # the base hostname & protocol for your s
 
 # Build settings
 theme: minima
+remote_theme: jekyll/minima
 plugins:
     - jekyll-feed
+    - jekyll-remote-theme
 show_excerpts: true
 
 minima:
