@@ -54,8 +54,16 @@ You're likely here because of [☢ Fallout 76 Quick Configuration](https://githu
 
 ### Skilled in
 
+#### Languages and Frameworks
 <a href="https://skillicons.dev">
-  <img alt="csharp, python, html, css, typescript" src="https://skillicons.dev/icons?i=cs,dotnet,visualstudio,python,flask,html,css,ts,js,jquery,webpack,nodejs,vscode,bash,md&perline=5" />
+    <img src="https://skillicons.dev/icons?i=cs,dotnet,python,html,css,js,ts,webpack,md&perline=6" />
+    <!-- flask, jquery, nodejs, react -->
+</a>
+
+#### Tools
+<a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=visualstudio,vscode,bash,git&perline=6" />
+    <!-- vim -->
 </a>
 
 I mostly worked with C# 🎵, Python 🐍, and JavaScript ☕📜.
