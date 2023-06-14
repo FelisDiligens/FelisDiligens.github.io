@@ -60,9 +60,32 @@ layout: base
     {{ content }}
   </div>
 
-  {%- if site.disqus.shortname -%}
-    {%- include disqus_comments.html -%}
-  {%- endif -%}
+  {% comment %}
+    {%- if site.disqus.shortname -%}
+      {%- include disqus_comments.html -%}
+    {%- endif -%}
+  {% endcomment %}
+
+  {% if page.comments %}
+    <hr>
+    <div id="disqus_thread"></div>
+    <script>
+        (function() {
+            var d = document, s = d.createElement('script');
+            
+            s.src = 'https://felisdiligens-github-io.disqus.com/embed.js';
+            
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>
+        Please enable JavaScript to view the 
+        <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+            comments powered by Disqus.
+        </a>
+    </noscript>
+  {% endif %}
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
