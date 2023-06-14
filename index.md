@@ -29,7 +29,7 @@ list_title: Posts
 ## About me
 
 <div class="profile">
-    <img class="profile-picture" src="/assets/profile-picture.jpg"/>
+    <img class="profile-picture" src="https://avatars.githubusercontent.com/u/47528453"/>
     <div class="profile-description">
         <div style="margin-bottom: 8px; font-size: 14pt;">
             I'm <span style="font-weight: bold;">FelisDiligens</span>
@@ -37,7 +37,7 @@ list_title: Posts
         </div>
         <div class="about-me">
             Hobbyist, amateur, self-taught developer.<br>
-            I love coffee ☕, RPGs ⚔️, and virtual reality. 
+            I love coffee ☕, RPGs ⚔️, and AI 🤖.
         </div>
     </div>
 </div>

@@ -1,1 +1,365 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-01T18:31:15+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">FelisDiligens’ blog</title><subtitle>Just a place where I dump stuff...</subtitle><author><name>FelisDiligens</name><email>felisdiligens@yahoo.com</email></author></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-06-14T17:40:05+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">FelisDiligens’ blog</title><subtitle>Just a place where I dump stuff...</subtitle><author><name>FelisDiligens</name><email>felisdiligens@yahoo.com</email></author><entry><title type="html">Make Windows behave more like Linux</title><link href="http://localhost:4000/2023/06/14/make-windows-behave-more-like-linux.html" rel="alternate" type="text/html" title="Make Windows behave more like Linux" /><published>2023-06-14T00:00:00+02:00</published><updated>2023-06-14T00:00:00+02:00</updated><id>http://localhost:4000/2023/06/14/make-windows-behave-more-like-linux</id><content type="html" xml:base="http://localhost:4000/2023/06/14/make-windows-behave-more-like-linux.html">&lt;p&gt;If you’re anything like me, you’ll find yourself frustrated whenever you have to boot up Windows.&lt;/p&gt;
+
+&lt;p&gt;The goal of this post is to show you how to make Windows just a bit more comfortable to a Linux user.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-basics&quot;&gt;The basics&lt;/h1&gt;
+
+&lt;h2 id=&quot;install-a-package-manager&quot;&gt;Install a package manager&lt;/h2&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;/assets/posts/shell-package-manager.png&quot; /&gt;
+    &lt;figcaption style=&quot;font-size: 11pt; font-style: italic;&quot;&gt;When you like bash and package managers under Linux but have to use Windows...&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;There are various package managers available for Windows. My favorite is Chocolatey.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Package manager&lt;/th&gt;
+      &lt;th&gt;License&lt;/th&gt;
+      &lt;th&gt;Recommendation/Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;https://community.chocolatey.org/&quot;&gt;Chocolatey&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;Partially open source (Apache v2)&lt;/td&gt;
+      &lt;td&gt;best for GUI apps / bigger programs&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;https://scoop.sh/&quot;&gt;scoop&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;Fully open source (Unlicense or MIT)&lt;/td&gt;
+      &lt;td&gt;best for single executable CLI tools (doesn’t pollute PATH as much)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;https://learn.microsoft.com/en-us/windows/package-manager/&quot;&gt;winget&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;CLI released under MIT&lt;/td&gt;
+      &lt;td&gt;the official Windows package manager (based on &lt;a href=&quot;https://keivan.io/the-day-appget-died/&quot;&gt;appget&lt;/a&gt;, which was &lt;a href=&quot;https://en.wikipedia.org/wiki/Embrace,_extend,_and_extinguish&quot;&gt;eee’d&lt;/a&gt; by Microsoft)&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;em&gt;(&lt;a href=&quot;https://winget.run/&quot;&gt;Find packages for winget&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;chocolatey&quot;&gt;Chocolatey&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/chocolatey.svg&quot; width=&quot;96&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To install Chocolatey, run in an elevated PowerShell window:&lt;/p&gt;
+&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Set-ExecutionPolicy&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Bypass&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-Scope&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-Force&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;System.Net.ServicePointManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SecurityProtocol&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;System.Net.ServicePointManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SecurityProtocol&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-bor&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;3072&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iwr&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;https://community.chocolatey.org/install.ps1&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-UseBasicParsing&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iex&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;See: &lt;a href=&quot;https://docs.chocolatey.org/en-us/choco/setup#install-from-powershell-v3&quot;&gt;docs.chocolatey.org/en-us/choco/setup&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The usage of Chocolatey is very similar to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;apt&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dnf&lt;/code&gt; under Linux.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Do&lt;/th&gt;
+      &lt;th&gt;Command&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Installation:&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;choco install PACKAGES -y&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Update all packages:&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;choco upgrade all -y&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Show info:&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;choco info PACKAGE&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Available updates:&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;choco outdated&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;List installed apps:&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;choco list --local-only&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Note: You have to execute choco with admin privilages. Thankfully there is a sudo equivalent, see below.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;getting-a-proper-shell&quot;&gt;Getting a proper shell&lt;/h2&gt;
+
+&lt;p&gt;There are a lot of different options here for Windows. WSL, Cygwin, Git Bash, PowerShell.&lt;/p&gt;
+
+&lt;p&gt;PowerShell is already installed and can be configured to behave more like Bash.&lt;/p&gt;
+
+&lt;h3 id=&quot;powershell&quot;&gt;PowerShell&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/powershell.svg&quot; width=&quot;96&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;configure-hotkeys&quot;&gt;Configure hotkeys&lt;/h4&gt;
+
+&lt;p&gt;If you’d like to just use PowerShell, you may be disappointed at first if you try various hotkeys.&lt;/p&gt;
+
+&lt;p&gt;To remedy this, first (if you’re using Windows PowerShell) install a newer version of PSReadLine (run as admin):&lt;/p&gt;
+&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Install-Module&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-Name&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PowerShellGet&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-Force&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Install-Module&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PSReadLine&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-AllowPrerelease&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-Force&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then, add to your PowerShell profile:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;To edit your profile, enter in PowerShell: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;notepad $profile&lt;/code&gt;&lt;br /&gt;
+Replace &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;notepad&lt;/code&gt; with your favorite editor.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Ctrl+D to exit, Ctrl+L to clear screen, and more. Like in bash &amp;lt;3&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Set-PSReadlineOption&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-EditMode&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Emacs&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;# Use Ctrl &amp;lt;- and -&amp;gt; to jump words&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;# See https://github.com/PowerShell/PowerShell/issues/3038&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Set-PSReadLineKeyHandler&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-Chord&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Ctrl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;LeftArrow&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;BackwardWord&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Set-PSReadLineKeyHandler&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-Chord&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Ctrl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;RightArrow&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ForwardWord&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;# Tab completion like in fish &amp;lt;3&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Set-PSReadlineKeyHandler&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-Key&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Tab&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-Function&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;MenuComplete&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;After restarting your PowerShell prompt, the changes should have been applied.&lt;/p&gt;
+
+&lt;h4 id=&quot;skip-welcome-message&quot;&gt;Skip welcome message&lt;/h4&gt;
+
+&lt;p&gt;To skip the welcome message, run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;powershell.exe&lt;/code&gt; with the argument &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-NoLogo&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;bash&quot;&gt;Bash&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/bash.svg&quot; width=&quot;96&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you’d like to use Bash on Windows, I’d recommend &lt;a href=&quot;https://www.cygwin.com/&quot;&gt;Cygwin&lt;/a&gt; over WSL. It’s way less bloated and runs natively.&lt;/p&gt;
+
+&lt;h2 id=&quot;installing-gnu-tools&quot;&gt;Installing GNU Tools&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/gnu.png&quot; width=&quot;96&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;What’s a shell without tools? Since Windows doesn’t come with tools like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;grep&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sed&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;awk&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tail&lt;/code&gt;, and so on, you’ll have to install ports from somewhere.&lt;/p&gt;
+
+&lt;p&gt;Here are some sources:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.cygwin.com/&quot;&gt;Cygwin&lt;/a&gt;: I’d recommend Cygwin, as it has a large repository of GNU and unix-y tools.&lt;/li&gt;
+  &lt;li&gt;Git Bash: If you install &lt;a href=&quot;https://git-scm.com/download/win&quot;&gt;Git for Windows&lt;/a&gt;, it will come with a few of the basic GNU tools.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.msys2.org/#installation&quot;&gt;MSYS2&lt;/a&gt;: a fork of Cygwin that focuses on being as native to win32 as possible.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://frippery.org/busybox/&quot;&gt;BusyBox&lt;/a&gt;: An alternative to GNU Tools&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://gnuwin32.sourceforge.net/&quot;&gt;GnuWin32&lt;/a&gt;: port of GNU Tools for Windows (unmaintained!)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you won’t be using Cygwin Bash, then MSYS2 is preferable.&lt;/p&gt;
+
+&lt;h2 id=&quot;installing-gsudo&quot;&gt;Installing gsudo&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://gerardog.github.io/gsudo/&quot;&gt;gsudo&lt;/a&gt; is a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo&lt;/code&gt; equivalent for Windows, with a similar user-experience as the original Unix/Linux sudo.&lt;/p&gt;
+
+&lt;p&gt;You can install it through your typical package managers:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;scoop install gsudo&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;choco install gsudo&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;winget install gerardog.gsudo&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;See: &lt;a href=&quot;https://github.com/gerardog/gsudo#installation&quot;&gt;github.com/gerardog/gsudo&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;installing-a-proper-terminal-emulator&quot;&gt;Installing a proper terminal emulator&lt;/h2&gt;
+
+&lt;p&gt;I think, the MSYS2 docs do a good job of displaying the various options: &lt;a href=&quot;https://www.msys2.org/docs/terminals/&quot;&gt;msys2.org/docs/terminals/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I’ll add my two cents here:&lt;/p&gt;
+
+&lt;h3 id=&quot;mintty&quot;&gt;mintty&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.msys2.org/docs/mintty.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;mintty is the default terminal of Cygwin, Git Bash, and MSYS2.&lt;br /&gt;
+It is quite customizable, but also lacks some features, such as tabs.&lt;br /&gt;
+Still, this is a solid choice for minimalists.&lt;/p&gt;
+
+&lt;h3 id=&quot;windows-terminal&quot;&gt;Windows Terminal&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.msys2.org/docs/winterm.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The official terminal by Microsoft, which is preinstalled on Windows 11.
+It is very customizable and has features such as profiles and tabs.&lt;/p&gt;
+
+&lt;p&gt;Easily installable through the &lt;a href=&quot;https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701&quot;&gt;Microsoft Store&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This is my favorite.&lt;/p&gt;
+
+&lt;h3 id=&quot;more&quot;&gt;More?&lt;/h3&gt;
+&lt;p&gt;Of course:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://alacritty.org/&quot;&gt;Alacritty&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://konsole.kde.org/&quot;&gt;Konsole by KDE&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cmder.app/&quot;&gt;Cmder&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;any many more…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;going-deeper&quot;&gt;Going deeper&lt;/h1&gt;
+
+&lt;p&gt;I have a few more articles on this topic that go a little deeper, if you want to check them out:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;hide-dotfiles-on-windows.html&quot;&gt;Hide dotfiles on Windows&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;(I’ll keep this updated when I’m adding more)&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;Windows will obviously never behave just like Linux.
+However there is no reason why we wouldn’t want to make it a bit more comfortable.&lt;/p&gt;
+
+&lt;p&gt;I hope this article helped you at least a bit.&lt;/p&gt;
+
+&lt;p&gt;Also, if you’re interested, you can look into my dotfiles for inspiration: &lt;a href=&quot;https://github.com/FelisDiligens/dotfiles&quot;&gt;My dotfiles&lt;/a&gt;&lt;/p&gt;
+
+&lt;!--
+Leave a comment if you have any more suggestions! &lt;3
+--&gt;</content><author><name>FelisDiligens</name><email>felisdiligens@yahoo.com</email></author><category term="windows" /><summary type="html">If you’re anything like me, you’ll find yourself frustrated whenever you have to boot up Windows.</summary></entry><entry><title type="html">Hide dotfiles on Windows</title><link href="http://localhost:4000/2023/06/14/hide-dotfiles-on-windows.html" rel="alternate" type="text/html" title="Hide dotfiles on Windows" /><published>2023-06-14T00:00:00+02:00</published><updated>2023-06-14T00:00:00+02:00</updated><id>http://localhost:4000/2023/06/14/hide-dotfiles-on-windows</id><content type="html" xml:base="http://localhost:4000/2023/06/14/hide-dotfiles-on-windows.html">&lt;figure&gt;
+    &lt;img src=&quot;/assets/posts/all-those-folders.png&quot; /&gt;
+    &lt;figcaption style=&quot;font-size: 11pt; font-style: italic;&quot;&gt;The absolute insanity that is the home folder on Windows&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;A lot of developers simply put dot files and folders into the home folder on Windows without adding the NTFS hidden attribute, resulting in an absolute mess as you can see in the screenshot.
+Dot files and folders aren’t hidden on Windows, but developers just gladly ignore this fact, it seems.&lt;/p&gt;
+
+&lt;p&gt;Some background:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;In Linux, and other UNIX like systems, a file with a name that starts by a dot (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.&lt;/code&gt;) is considered a &lt;em&gt;hidden file&lt;/em&gt;. Some file managers also hide files that end with a tilde (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~&lt;/code&gt;), which are considered &lt;em&gt;backup files&lt;/em&gt;. &lt;sup&gt;&lt;a href=&quot;https://github.com/brunonova/nautilus-hide&quot;&gt;Source&lt;/a&gt;&lt;/sup&gt; Typically files ending with a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~&lt;/code&gt; are created by editors like emacs, nano, or vi. &lt;sup&gt;&lt;a href=&quot;https://unix.stackexchange.com/a/76192&quot;&gt;Source&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;If you create the file &lt;em&gt;.hidden&lt;/em&gt; in a directory in which you want to hide files or folders and enter the names of files or folders there without specifying the path, they will not be displayed in the file manager. &lt;sup&gt;&lt;a href=&quot;https://wiki.ubuntuusers.de/Versteckte_Dateien/&quot;&gt;Source&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;a-little-python-script&quot;&gt;A little python script&lt;/h2&gt;
+
+&lt;p&gt;I wrote a little python script to have a tidy home folder once again.&lt;/p&gt;
+
+&lt;p&gt;You may want to check it out: &lt;a href=&quot;https://gist.github.com/FelisDiligens/9886ede399e3a321797b43ab53a371f9&quot;&gt;Gist: FelisDiligens/hide-files.py&lt;/a&gt;&lt;br /&gt;
+(I added a comment below the gist to explain usage)&lt;/p&gt;
+
+&lt;p&gt;The python script looks into each given directory (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;%USERPROFILE%&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~&lt;/code&gt; by default) and add the NTFS hidden attribute to every file and folder that starts with a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.&lt;/code&gt;.
+As a bonus, it also reads &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.hidden&lt;/code&gt; files inside of directories and hides whatever entries are written in it.&lt;/p&gt;
+
+&lt;p&gt;However, it does not run on it’s own and it does not scan the entire disk (only given directories).
+You have to do that manually or setup some service or a cron job to run it periodically.&lt;/p&gt;
+
+&lt;p&gt;Thankfully, you can setup a cron job using Cygwin, see below.&lt;/p&gt;
+
+&lt;h2 id=&quot;run-cronjobs-under-windows&quot;&gt;Run Cronjobs under Windows&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.cygwin.com/&quot;&gt;Cygwin&lt;/a&gt; can be used to create a Windows service that runs the &lt;a href=&quot;https://en.wikipedia.org/wiki/Cron&quot;&gt;cron&lt;/a&gt; daemon.&lt;/p&gt;
+
+&lt;p&gt;First, you have to install &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cygrunsrv&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cron&lt;/code&gt; using the Cygwin installer. (You can simply rerun it, if you already installed Cygwin)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/cygwin-installer-cygrunsrv.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;ℹ️  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cygrunsrv&lt;/code&gt; can be used to add daemons as a Windows service&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Then start an elevated bash shell (or use gsudo) to run:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cygrunsrv &lt;span class=&quot;nt&quot;&gt;-I&lt;/span&gt; cron &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; /usr/sbin/cron &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Arguments breakdown:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-I &amp;lt;svc_name&amp;gt;&lt;/code&gt;: install a Windows service&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-p &amp;lt;app_path&amp;gt;&lt;/code&gt;: path to POSIX program&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-a &amp;lt;args&amp;gt;&lt;/code&gt;: arguments for POSIX program
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cron -n&lt;/code&gt;: make cron run in the foreground&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can then do the following (some may need to be run as admin):&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Query &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cron&lt;/code&gt; status: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cygrunsrv --query cron&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Start &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cron&lt;/code&gt;: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cygrunsrv --start cron&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Stop &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cron&lt;/code&gt;: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cygrunsrv --stop cron&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Remove &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cron&lt;/code&gt; daemon: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cygrunsrv -R cron&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Afterwards, you can setup cronjobs using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;crontab -e&lt;/code&gt; just like you’re used to.&lt;/p&gt;
+
+&lt;p&gt;The cron daemon will start automatically when you boot Windows and log in.&lt;/p&gt;
+
+&lt;p&gt;To then make use of the script, I added this:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;*/10 * * * * /cygdrive/c/Users/[redacted]/AppData/Local/Programs/Python/Python311/python &quot;C:\Users\[redacted]\Scripts\hide-files.py&quot; &quot;C:\Users\[redacted]&quot; &quot;D:\\&quot; &quot;E:\\&quot; -d 2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The above states that every 10 minutes, it will run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;python.exe hide-files.py&lt;/code&gt; with a few arguments.&lt;/p&gt;
+
+&lt;h2 id=&quot;use-ctrlh-in-windows-explorer&quot;&gt;Use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ctrl+H&lt;/code&gt; in Windows Explorer&lt;/h2&gt;
+
+&lt;p&gt;There are a few hotkeys that I wish would just work under Windows.
+For example, under Linux I can use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ctrl+H&lt;/code&gt; to toggle hidden entries. This works with Nautilus, Dolphin, Nemo, Thunar, and many other popular Linux file managers. But not in Windows Explorer.&lt;/p&gt;
+
+&lt;p&gt;For this, I’ve found that a little dabbling with AutoHotkey can help a lot.&lt;/p&gt;
+
+&lt;p&gt;If you don’t know &lt;a href=&quot;https://www.autohotkey.com/&quot;&gt;AutoHotkey&lt;/a&gt;,
+it is a free, open-source scripting language for Windows that essentially allows you to make complex macros.
+(But this only scratches the surface)&lt;/p&gt;
+
+&lt;p&gt;Here’s an excerpt from my AutoHotkey script:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-ahk&quot;&gt;; Ctrl+H to toggle hidden files
+; Hide/Show hidden files in Windows file explorer
+^h::
+If WinExist(&quot;ahk_exe Explorer.EXE&quot;) &amp;amp;&amp;amp; WinActive(&quot;ahk_exe Explorer.EXE&quot;)
+{
+	; Toggle registry entry
+	RegRead, HiddenVal, HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced, Hidden
+	If HiddenVal = 2
+	{
+		RegWrite, REG_DWORD, HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced, Hidden, 1
+	}
+	Else
+	{
+		RegWrite, REG_DWORD, HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced, Hidden, 2
+	}
+	; Refresh window
+	Send ^{F5}
+}
+Return
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;What it does:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;When you press &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ctrl+H&lt;/code&gt; (see &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;^h::&lt;/code&gt;)…
+    &lt;ul&gt;
+      &lt;li&gt;then check if &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Explorer.EXE&lt;/code&gt; is running and is the active window. If that’s the case:
+        &lt;ul&gt;
+          &lt;li&gt;read the registry value &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Hidden&lt;/code&gt; in the key &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced&lt;/code&gt; and write the result into the ahk variable &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HiddenVal&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;toggle the registry value with the help of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HiddenVal&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;send &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;F5&lt;/code&gt; to refresh the file explorer&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can simply copy and paste it into a file with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.ahk&lt;/code&gt; extension and double-click it. You can also compile it into an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.exe&lt;/code&gt; file for portable use.&lt;/p&gt;
+
+&lt;h2 id=&quot;further-reading&quot;&gt;Further reading&lt;/h2&gt;
+
+&lt;p&gt;There’s actually a project on GitHub that uses DLL injection to hide dotfiles.&lt;br /&gt;
+You may want to check this out: &lt;a href=&quot;https://github.com/joshumax/WinHideEx&quot;&gt;github.com/joshumax/WinHideEx&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If found reading this part quite amusing, as this is what I’ve been doing (and explaining in this article):&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Yes, I’m aware that you can manually mark all of them with the “hidden” attribute but it’s like playing NTFS whack-a-mole with a filesystem watcher script.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So, if you’re interested in a different (and perhaps more elegant) solution, give WinHideEx a try.&lt;/p&gt;</content><author><name>FelisDiligens</name><email>felisdiligens@yahoo.com</email></author><category term="windows" /><summary type="html">The absolute insanity that is the home folder on Windows</summary></entry></feed>

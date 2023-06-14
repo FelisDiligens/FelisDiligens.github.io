@@ -3,17 +3,38 @@ layout: base
 ---
 
 <style>
-  .post-list {
+  .post-container {
     background-color: #252525;
     border-radius: 4px;
     box-shadow: #151515 2px 2px 2px 2px;
     padding: 8px 20px;
+    margin-bottom: 10px;
   }
 
   .post-excerpt {
     color: lightgray;
     font-size: 11pt;
     font-style: italic;
+  }
+
+  .tags {
+      color: gray;
+      font-size: 10pt;
+      list-style: none;
+      padding: 4px 0;
+      margin: 0;
+  }
+
+  .tags > li {
+      display: inline-block;
+      padding: 0 8px;
+      margin: 0 2px;
+      border: 1px solid gray;
+      border-radius: 20px;
+  }
+
+  .tags > li > a {
+      color: inherit;
   }
 </style>
 
@@ -40,17 +61,27 @@ layout: base
     <div class="post-list">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       {%- for post in posts -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          <div class="post-excerpt">
-            {{ post.excerpt }}
-          </div>
-        {%- endif -%}
+        <div class="post-container">
+          <span class="post-meta">
+              <time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: date_format }}</time>
+              <ul class="tags">
+                  Tags:&nbsp;
+                  {% for tag in post.tags %}
+                      <li><a href="/tags/{{ tag }}">{{ tag }}</a></li>
+                  {% endfor %}
+              </ul>
+          </span>
+          <h3>
+            <a class="post-link" href="{{ post.url | relative_url }}">
+              {{ post.title | escape }}
+            </a>
+          </h3>
+          {%- if site.show_excerpts -%}
+            <div class="post-excerpt">
+              {{ post.excerpt | strip_html }}
+            </div>
+          {%- endif -%}
+        </div>
       {%- endfor -%}
     </div>
 

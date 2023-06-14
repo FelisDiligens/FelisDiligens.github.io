@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Make Windows behave more like Linux | FelisDiligens’ blog</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Make Windows behave more like Linux" />
+<meta name="author" content="FelisDiligens" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="If you’re anything like me, you’ll find yourself frustrated whenever you have to boot up Windows." />
+<meta property="og:description" content="If you’re anything like me, you’ll find yourself frustrated whenever you have to boot up Windows." />
+<link rel="canonical" href="http://localhost:4000/2023/06/14/make-windows-behave-more-like-linux.html" />
+<meta property="og:url" content="http://localhost:4000/2023/06/14/make-windows-behave-more-like-linux.html" />
+<meta property="og:site_name" content="FelisDiligens’ blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-06-14T00:00:00+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Make Windows behave more like Linux" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"FelisDiligens"},"dateModified":"2023-06-14T00:00:00+02:00","datePublished":"2023-06-14T00:00:00+02:00","description":"If you’re anything like me, you’ll find yourself frustrated whenever you have to boot up Windows.","headline":"Make Windows behave more like Linux","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2023/06/14/make-windows-behave-more-like-linux.html"},"url":"http://localhost:4000/2023/06/14/make-windows-behave-more-like-linux.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="FelisDiligens&apos; blog" />
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">FelisDiligens&#39; blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/posts/">Posts</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <style>
+    .tags {
+        color: gray;
+        font-size: 10pt;
+        list-style: none;
+        padding: 4px 0;
+        margin: 0;
+    }
+
+    .tags > li {
+        display: inline-block;
+        padding: 0 8px;
+        margin: 0 2px;
+        border: 1px solid gray;
+        border-radius: 10px;
+    }
+
+    .tags > li > a {
+        color: inherit;
+    }
+</style>
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Make Windows behave more like Linux</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2023-06-14T00:00:00+02:00" itemprop="datePublished">
+        Jun 14, 2023
+      </time>
+
+      <!-- Post tags -->
+      <ul class="tags">
+        Tags:&nbsp;<li><a href="/tags/windows">windows</a></li></ul></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>If you’re anything like me, you’ll find yourself frustrated whenever you have to boot up Windows.</p>
+
+<p>The goal of this post is to show you how to make Windows just a bit more comfortable to a Linux user.</p>
+
+<h1 id="the-basics">The basics</h1>
+
+<h2 id="install-a-package-manager">Install a package manager</h2>
+
+<figure>
+    <img src="/assets/posts/shell-package-manager.png" />
+    <figcaption style="font-size: 11pt; font-style: italic;">When you like bash and package managers under Linux but have to use Windows...</figcaption>
+</figure>
+
+<p>There are various package managers available for Windows. My favorite is Chocolatey.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Package manager</th>
+      <th>License</th>
+      <th>Recommendation/Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://community.chocolatey.org/">Chocolatey</a></td>
+      <td>Partially open source (Apache v2)</td>
+      <td>best for GUI apps / bigger programs</td>
+    </tr>
+    <tr>
+      <td><a href="https://scoop.sh/">scoop</a></td>
+      <td>Fully open source (Unlicense or MIT)</td>
+      <td>best for single executable CLI tools (doesn’t pollute PATH as much)</td>
+    </tr>
+    <tr>
+      <td><a href="https://learn.microsoft.com/en-us/windows/package-manager/">winget</a></td>
+      <td>CLI released under MIT</td>
+      <td>the official Windows package manager (based on <a href="https://keivan.io/the-day-appget-died/">appget</a>, which was <a href="https://en.wikipedia.org/wiki/Embrace,_extend,_and_extinguish">eee’d</a> by Microsoft)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>(<a href="https://winget.run/">Find packages for winget</a>)</em></p>
+
+<h3 id="chocolatey">Chocolatey</h3>
+
+<p><img src="/assets/posts/chocolatey.svg" width="96" /></p>
+
+<p>To install Chocolatey, run in an elevated PowerShell window:</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Set-ExecutionPolicy</span><span class="w"> </span><span class="nx">Bypass</span><span class="w"> </span><span class="nt">-Scope</span><span class="w"> </span><span class="nx">Process</span><span class="w"> </span><span class="nt">-Force</span><span class="w">
+</span><span class="p">[</span><span class="n">System.Net.ServicePointManager</span><span class="p">]::</span><span class="n">SecurityProtocol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">System.Net.ServicePointManager</span><span class="p">]::</span><span class="n">SecurityProtocol</span><span class="w"> </span><span class="o">-bor</span><span class="w"> </span><span class="nx">3072</span><span class="w">
+</span><span class="n">iwr</span><span class="w"> </span><span class="nx">https://community.chocolatey.org/install.ps1</span><span class="w"> </span><span class="nt">-UseBasicParsing</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">iex</span><span class="w">
+</span></code></pre></div></div>
+<p>See: <a href="https://docs.chocolatey.org/en-us/choco/setup#install-from-powershell-v3">docs.chocolatey.org/en-us/choco/setup</a></p>
+
+<p>The usage of Chocolatey is very similar to <code class="language-plaintext highlighter-rouge">apt</code> or <code class="language-plaintext highlighter-rouge">dnf</code> under Linux.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Do</th>
+      <th>Command</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Installation:</td>
+      <td><code class="language-plaintext highlighter-rouge">choco install PACKAGES -y</code></td>
+    </tr>
+    <tr>
+      <td>Update all packages:</td>
+      <td><code class="language-plaintext highlighter-rouge">choco upgrade all -y</code></td>
+    </tr>
+    <tr>
+      <td>Show info:</td>
+      <td><code class="language-plaintext highlighter-rouge">choco info PACKAGE</code></td>
+    </tr>
+    <tr>
+      <td>Available updates:</td>
+      <td><code class="language-plaintext highlighter-rouge">choco outdated</code></td>
+    </tr>
+    <tr>
+      <td>List installed apps:</td>
+      <td><code class="language-plaintext highlighter-rouge">choco list --local-only</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>Note: You have to execute choco with admin privilages. Thankfully there is a sudo equivalent, see below.</p>
+</blockquote>
+
+<h2 id="getting-a-proper-shell">Getting a proper shell</h2>
+
+<p>There are a lot of different options here for Windows. WSL, Cygwin, Git Bash, PowerShell.</p>
+
+<p>PowerShell is already installed and can be configured to behave more like Bash.</p>
+
+<h3 id="powershell">PowerShell</h3>
+
+<p><img src="/assets/posts/powershell.svg" width="96" /></p>
+
+<h4 id="configure-hotkeys">Configure hotkeys</h4>
+
+<p>If you’d like to just use PowerShell, you may be disappointed at first if you try various hotkeys.</p>
+
+<p>To remedy this, first (if you’re using Windows PowerShell) install a newer version of PSReadLine (run as admin):</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Install-Module</span><span class="w"> </span><span class="nt">-Name</span><span class="w"> </span><span class="nx">PowerShellGet</span><span class="w"> </span><span class="nt">-Force</span><span class="w">
+</span><span class="n">Install-Module</span><span class="w"> </span><span class="nx">PSReadLine</span><span class="w"> </span><span class="nt">-AllowPrerelease</span><span class="w"> </span><span class="nt">-Force</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Then, add to your PowerShell profile:</p>
+
+<blockquote>
+  <p>To edit your profile, enter in PowerShell: <code class="language-plaintext highlighter-rouge">notepad $profile</code><br />
+Replace <code class="language-plaintext highlighter-rouge">notepad</code> with your favorite editor.</p>
+</blockquote>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Ctrl+D to exit, Ctrl+L to clear screen, and more. Like in bash &lt;3</span><span class="w">
+</span><span class="n">Set-PSReadlineOption</span><span class="w"> </span><span class="nt">-EditMode</span><span class="w"> </span><span class="nx">Emacs</span><span class="w">
+
+</span><span class="c"># Use Ctrl &lt;- and -&gt; to jump words</span><span class="w">
+</span><span class="c"># See https://github.com/PowerShell/PowerShell/issues/3038</span><span class="w">
+</span><span class="n">Set-PSReadLineKeyHandler</span><span class="w"> </span><span class="nt">-Chord</span><span class="w"> </span><span class="nx">Ctrl</span><span class="o">+</span><span class="nx">LeftArrow</span><span class="w"> </span><span class="nx">BackwardWord</span><span class="w">
+</span><span class="n">Set-PSReadLineKeyHandler</span><span class="w"> </span><span class="nt">-Chord</span><span class="w"> </span><span class="nx">Ctrl</span><span class="o">+</span><span class="nx">RightArrow</span><span class="w"> </span><span class="nx">ForwardWord</span><span class="w">
+
+</span><span class="c"># Tab completion like in fish &lt;3</span><span class="w">
+</span><span class="n">Set-PSReadlineKeyHandler</span><span class="w"> </span><span class="nt">-Key</span><span class="w"> </span><span class="nx">Tab</span><span class="w"> </span><span class="nt">-Function</span><span class="w"> </span><span class="nx">MenuComplete</span><span class="w">
+</span></code></pre></div></div>
+
+<p>After restarting your PowerShell prompt, the changes should have been applied.</p>
+
+<h4 id="skip-welcome-message">Skip welcome message</h4>
+
+<p>To skip the welcome message, run <code class="language-plaintext highlighter-rouge">powershell.exe</code> with the argument <code class="language-plaintext highlighter-rouge">-NoLogo</code>.</p>
+
+<h3 id="bash">Bash</h3>
+
+<p><img src="/assets/posts/bash.svg" width="96" /></p>
+
+<p>If you’d like to use Bash on Windows, I’d recommend <a href="https://www.cygwin.com/">Cygwin</a> over WSL. It’s way less bloated and runs natively.</p>
+
+<h2 id="installing-gnu-tools">Installing GNU Tools</h2>
+
+<p><img src="/assets/posts/gnu.png" width="96" /></p>
+
+<p>What’s a shell without tools? Since Windows doesn’t come with tools like <code class="language-plaintext highlighter-rouge">grep</code>, <code class="language-plaintext highlighter-rouge">sed</code>, <code class="language-plaintext highlighter-rouge">awk</code>, <code class="language-plaintext highlighter-rouge">tail</code>, and so on, you’ll have to install ports from somewhere.</p>
+
+<p>Here are some sources:</p>
+<ul>
+  <li><a href="https://www.cygwin.com/">Cygwin</a>: I’d recommend Cygwin, as it has a large repository of GNU and unix-y tools.</li>
+  <li>Git Bash: If you install <a href="https://git-scm.com/download/win">Git for Windows</a>, it will come with a few of the basic GNU tools.</li>
+  <li><a href="https://www.msys2.org/#installation">MSYS2</a>: a fork of Cygwin that focuses on being as native to win32 as possible.</li>
+  <li><a href="https://frippery.org/busybox/">BusyBox</a>: An alternative to GNU Tools</li>
+  <li><a href="https://gnuwin32.sourceforge.net/">GnuWin32</a>: port of GNU Tools for Windows (unmaintained!)</li>
+</ul>
+
+<p>If you won’t be using Cygwin Bash, then MSYS2 is preferable.</p>
+
+<h2 id="installing-gsudo">Installing gsudo</h2>
+
+<p><a href="https://gerardog.github.io/gsudo/">gsudo</a> is a <code class="language-plaintext highlighter-rouge">sudo</code> equivalent for Windows, with a similar user-experience as the original Unix/Linux sudo.</p>
+
+<p>You can install it through your typical package managers:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">scoop install gsudo</code></li>
+  <li><code class="language-plaintext highlighter-rouge">choco install gsudo</code></li>
+  <li><code class="language-plaintext highlighter-rouge">winget install gerardog.gsudo</code></li>
+</ul>
+
+<p>See: <a href="https://github.com/gerardog/gsudo#installation">github.com/gerardog/gsudo</a></p>
+
+<h2 id="installing-a-proper-terminal-emulator">Installing a proper terminal emulator</h2>
+
+<p>I think, the MSYS2 docs do a good job of displaying the various options: <a href="https://www.msys2.org/docs/terminals/">msys2.org/docs/terminals/</a></p>
+
+<p>I’ll add my two cents here:</p>
+
+<h3 id="mintty">mintty</h3>
+<p><img src="https://www.msys2.org/docs/mintty.png" alt="" /></p>
+
+<p>mintty is the default terminal of Cygwin, Git Bash, and MSYS2.<br />
+It is quite customizable, but also lacks some features, such as tabs.<br />
+Still, this is a solid choice for minimalists.</p>
+
+<h3 id="windows-terminal">Windows Terminal</h3>
+<p><img src="https://www.msys2.org/docs/winterm.png" alt="" /></p>
+
+<p>The official terminal by Microsoft, which is preinstalled on Windows 11.
+It is very customizable and has features such as profiles and tabs.</p>
+
+<p>Easily installable through the <a href="https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701">Microsoft Store</a>.</p>
+
+<p>This is my favorite.</p>
+
+<h3 id="more">More?</h3>
+<p>Of course:</p>
+
+<ul>
+  <li><a href="https://alacritty.org/">Alacritty</a></li>
+  <li><a href="https://konsole.kde.org/">Konsole by KDE</a></li>
+  <li><a href="https://cmder.app/">Cmder</a></li>
+  <li>any many more…</li>
+</ul>
+
+<h1 id="going-deeper">Going deeper</h1>
+
+<p>I have a few more articles on this topic that go a little deeper, if you want to check them out:</p>
+<ul>
+  <li><a href="hide-dotfiles-on-windows.html">Hide dotfiles on Windows</a></li>
+</ul>
+
+<p>(I’ll keep this updated when I’m adding more)</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>Windows will obviously never behave just like Linux.
+However there is no reason why we wouldn’t want to make it a bit more comfortable.</p>
+
+<p>I hope this article helped you at least a bit.</p>
+
+<p>Also, if you’re interested, you can look into my dotfiles for inspiration: <a href="https://github.com/FelisDiligens/dotfiles">My dotfiles</a></p>
+
+<!--
+Leave a comment if you have any more suggestions! <3
+-->
+
+  </div><a class="u-url" href="/2023/06/14/make-windows-behave-more-like-linux.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="http://localhost:4000/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+        <ul class="contact-list">
+          <li class="p-name">FelisDiligens</li>
+          <li><a class="u-email" href="mailto:felisdiligens@yahoo.com">felisdiligens@yahoo.com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p>Just a place where I dump stuff...</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/FelisDiligens" target="_blank" title="GitHub">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://www.nexusmods.com/fallout76/users/41275740" target="_blank" title="NexusMods">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#nexusmods"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://www.npmjs.com/~felisdiligens" target="_blank" title="npm">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#npm"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://ko-fi.com/felisdiligens" target="_blank" title="Ko-fi">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#kofi"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://discourse.joplinapp.org/u/felisdiligens" target="_blank" title="Joplin Forum">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#joplin"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
