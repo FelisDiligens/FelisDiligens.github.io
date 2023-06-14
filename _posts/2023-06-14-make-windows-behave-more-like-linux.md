@@ -5,7 +5,7 @@ tags: windows
 comments: true
 ---
 
-If you're anything like me, you'll find yourself frustrated whenever you have to boot up Windows.
+If you're anything like me, you sigh whenever you have to work with Windows.
 
 The goal of this post is to show you how to make Windows just a bit more comfortable to a Linux user.
 

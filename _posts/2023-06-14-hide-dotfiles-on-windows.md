@@ -7,8 +7,10 @@ comments: true
 
 <figure>
     <img src="/assets/posts/all-those-folders.png">
-    <figcaption style="font-size: 11pt; font-style: italic;">The absolute insanity that is the home folder on Windows</figcaption>
+    <figcaption style="font-size: 11pt; font-style: italic;">The mess that is the home folder on Windows</figcaption>
 </figure>
+
+_(though, to be fair, the home folder on Linux looks similar if you show the hidden folders...)_
 
 A lot of developers simply put dot files and folders into the home folder on Windows without adding the NTFS hidden attribute, resulting in an absolute mess as you can see in the screenshot.
 Dot files and folders aren't hidden on Windows, but developers just gladly ignore this fact, it seems.
