@@ -51,8 +51,6 @@ minima:
         - title: Joplin Forum
           platform: joplin
           user_url: "https://discourse.joplinapp.org/u/felisdiligens"
-    disqus:
-        shortname: felisdiligens-github-io
 
 author:
     name: FelisDiligens
@@ -61,6 +59,9 @@ author:
 header_pages:
   - about.md
   - posts.html
+
+disqus:
+    shortname: felisdiligens-github-io
 
 # Exclude from processing.
 # The following items will not be processed, by default.
