@@ -56,7 +56,7 @@ layout: base
         </h3>
         {%- if site.show_excerpts -%}
           <div class="post-excerpt">
-            {{ post.excerpt }}
+            {{ post.excerpt | strip_html }}
           </div>
         {%- endif -%}
       </div>
