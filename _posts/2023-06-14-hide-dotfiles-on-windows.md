@@ -36,8 +36,9 @@ You have to do that manually or setup some service or a cron job to run it perio
 
 Thankfully, you can setup a cron job using Cygwin, see below.
 
+## Run the script periodically
 
-## Run Cronjobs under Windows
+### Option 1: Run Cronjobs under Windows
 
 [Cygwin](https://www.cygwin.com/) can be used to create a Windows service that runs the [cron](https://en.wikipedia.org/wiki/Cron) daemon.
 
@@ -75,6 +76,11 @@ To then make use of the script, I added this:
 ```
 
 The above states that every 10 minutes, it will run `python.exe hide-files.py` with a few arguments.
+
+### Option 2: Use NSSM - the Non-Sucking Service Manager
+
+- Install [NSSM](https://nssm.cc/download): `choco install NSSM` or `winget install -e --id NSSM.NSSM`
+- Use `nssm install SERVICENAME` to install a new service. See [nssm.cc/usage](https://nssm.cc/usage).
 
 ## Use `Ctrl+H` in Windows Explorer
 
