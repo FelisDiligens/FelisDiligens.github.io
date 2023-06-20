@@ -125,7 +125,7 @@ You can simply copy and paste it into a file with the `.ahk` extension and doubl
 There's actually a project on GitHub that uses DLL injection to hide dotfiles.  
 You may want to check this out: [github.com/joshumax/WinHideEx](https://github.com/joshumax/WinHideEx)
 
-If found reading this part quite amusing, as this is what I've been doing (and explaining in this article):
+I've found reading this part quite amusing, as this is what I've been doing (and explaining in this article):
 > Yes, I'm aware that you can manually mark all of them with the "hidden" attribute but it's like playing NTFS whack-a-mole with a filesystem watcher script. 
 
 So, if you're interested in a different (and perhaps more elegant) solution, give WinHideEx a try.
