@@ -79,8 +79,12 @@ The above states that every 10 minutes, it will run `python.exe hide-files.py` w
 
 ### Option 2: Use NSSM - the Non-Sucking Service Manager
 
+I won't go into details here on how to setup a service with NSSM, but this should get you started:
+
 - Install [NSSM](https://nssm.cc/download): `choco install NSSM` or `winget install -e --id NSSM.NSSM`
 - Use `nssm install SERVICENAME` to install a new service. See [nssm.cc/usage](https://nssm.cc/usage).
+
+You might need to write a script that runs the python script periodically and install that as a service... bit of work but it can be done.
 
 ## Use `Ctrl+H` in Windows Explorer
 
